@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.phpunit.result.cache
+.scannerwork
+/.idea
+/.vagrant
+/.vscode
+/coverage
+/nbproject
+/storage/.db
+/storage/*.key
+/vendor
+docker-compose.override.yml
