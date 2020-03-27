@@ -194,8 +194,8 @@ abstract class BaseRepository
         }
 
         $data['id'] = $id;
-        $data['created'] = date('Y-m-d H:i:d');
-        $data['modified'] = date('Y-m-d H:i:d');
+        $data['created'] = date('Y-m-d H:i:s');
+        $data['modified'] = date('Y-m-d H:i:s');
 
         $this->db->table($this->table)
             ->insert($data);
@@ -212,7 +212,7 @@ abstract class BaseRepository
         array $data,
         string $id
     ) : bool {
-        $data['modified'] = date('Y-m-d H:i:d');
+        $data['modified'] = date('Y-m-d H:i:s');
         $this->db->table($this->table)
             ->where('id', $id)
             ->whereNull('deleted')
@@ -229,8 +229,8 @@ abstract class BaseRepository
         string $id
     ) : bool {
         $data = [];
-        $data['modified'] = date('Y-m-d H:i:d');
-        $data['deleted'] = date('Y-m-d H:i:d');
+        $data['modified'] = date('Y-m-d H:i:s');
+        $data['deleted'] = date('Y-m-d H:i:s');
         $this->db->table($this->table)
             ->where('id', $id)
             ->whereNull('deleted')
