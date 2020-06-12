@@ -9,11 +9,7 @@ composer install
 ```sh
 docker-compose up
 ```
-3. Create system tables
-```sh
-docker exec -d back-php php artisan migrate:fresh --seed
-```
-4. Verify if API is health: [Api health check](http://localhost:8100/health/api) and [Api DB health check](http://localhost:8100/health/db)
+3. Verify if API is health: [Api health check](http://localhost:8100/health/api) and [Api DB health check](http://localhost:8100/health/db)
 
 5. Now the system is running [here](http://localhost:8100).
 

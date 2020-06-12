@@ -9,7 +9,6 @@ use App\Exceptions\Custom\ForbiddenException;
 use App\Exceptions\Custom\InvalidCredentialsException;
 use App\Exceptions\Custom\NotAuthorizedException;
 use App\Exceptions\Custom\ValidationException;
-use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use JwtManager\ExpiredTokenException;
@@ -20,6 +19,7 @@ use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -59,7 +59,7 @@ class Handler extends ExceptionHandler
      * @return void
      */
     public function report(
-        Exception $exception
+        Throwable $exception
     ) {
         if ($this->shouldntReport($exception)) {
             return;
@@ -77,7 +77,7 @@ class Handler extends ExceptionHandler
 
     public function render(
         $request,
-        Exception $exception
+        Throwable $exception
     ) {
         $requestId = $request->requestId ?? '';
         $startProfile = $request->startProfile ?? 0;

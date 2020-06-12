@@ -2,10 +2,11 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-try {
-    Dotenv\Dotenv::create(dirname(__DIR__))->load();
-} catch (Dotenv\Exception\InvalidPathException $e) {
-}
+(new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
+    dirname(__DIR__)
+))->bootstrap();
+
+date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
