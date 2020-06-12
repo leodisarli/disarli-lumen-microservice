@@ -57,7 +57,7 @@ class {{domainCaps}}DeadListBusinessTest extends TestCase
         $this->assertEquals($data, $process);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

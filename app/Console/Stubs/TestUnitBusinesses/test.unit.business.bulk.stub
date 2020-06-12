@@ -59,7 +59,7 @@ class {{domainCaps}}BulkBusinessTest extends TestCase
         $this->assertEquals([], $business);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

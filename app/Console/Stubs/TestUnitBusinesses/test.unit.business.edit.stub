@@ -76,7 +76,7 @@ class {{domainCaps}}EditBusinessTest extends TestCase
         $process = ${{domain}}EditBusiness->process($data, $id);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

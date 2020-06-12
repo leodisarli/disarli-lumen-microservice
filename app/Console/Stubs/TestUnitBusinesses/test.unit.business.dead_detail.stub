@@ -71,7 +71,7 @@ class {{domainCaps}}DeadDetailBusinessTest extends TestCase
         $process = ${{domain}}DeadDetailBusiness->process($id);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

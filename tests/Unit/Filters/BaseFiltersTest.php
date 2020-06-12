@@ -138,7 +138,7 @@ class BaseFiltersTest extends TestCase
         $filters = $baseFilters->getValidFilters();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

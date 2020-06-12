@@ -189,7 +189,7 @@ class BaseRequestTest extends TestCase
         $this->assertEquals($path, $goodPath);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

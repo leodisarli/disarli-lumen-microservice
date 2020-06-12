@@ -148,7 +148,7 @@ class BaseParametersTest extends TestCase
         $this->assertEquals($helpers, 'asc');
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

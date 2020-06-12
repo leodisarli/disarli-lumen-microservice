@@ -118,7 +118,7 @@ class BaseValidatorTest extends TestCase
         $validator = $baseValidator->validate($data);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

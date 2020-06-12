@@ -18,12 +18,12 @@ class BaseParameters
     ) {
         $this->data = $data;
     }
-    
+
     /**
      * get and return fields
      * @return array
      */
-    public function fields() : array
+    public function fields(): array
     {
         $dataFields = $this->data['fields'];
         if (empty($dataFields)) {
@@ -31,7 +31,7 @@ class BaseParameters
         }
         $dataFields = str_replace(' ', '', $dataFields);
         $fieldsArray = explode(',', $dataFields);
-        
+
         $allowed = array_intersect(
             $this->fields,
             $fieldsArray
@@ -46,27 +46,23 @@ class BaseParameters
      * get and return order
      * @return string
      */
-    public function order() : string
+    public function order(): string
     {
         $dataOrder = $this->data['order'];
         if (empty($dataOrder)) {
-            return array_first(
-                $this->order
-            );
+            return $this->order[0];
         }
         if (in_array($dataOrder, $this->order)) {
             return $dataOrder;
         }
-        return array_first(
-            $this->order
-        );
+        return $this->order[0];
     }
 
     /**
      * get and return classification
      * @return string
      */
-    public function classification() : string
+    public function classification(): string
     {
         $class = $this->data['class'];
         if (empty($class)) {

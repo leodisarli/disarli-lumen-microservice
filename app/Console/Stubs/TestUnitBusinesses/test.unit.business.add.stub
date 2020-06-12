@@ -46,7 +46,7 @@ class {{domainCaps}}AddBusinessTest extends TestCase
         $this->assertEquals((object) $data, $process);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

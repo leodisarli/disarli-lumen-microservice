@@ -153,7 +153,7 @@ class AuthGenerateBusinessTest extends TestCase
         $this->assertNull($business);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

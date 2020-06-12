@@ -48,7 +48,7 @@ class {{domainCaps}}ListBusinessTest extends TestCase
         $this->assertEquals($data, $process);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

@@ -816,7 +816,7 @@ class BaseRepositoryTest extends TestCase
         $this->assertEquals($return, $getBulk);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

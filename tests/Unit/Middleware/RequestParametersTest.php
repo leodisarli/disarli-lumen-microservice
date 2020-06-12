@@ -99,7 +99,7 @@ class RequestParametersTest extends TestCase
         });
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }
